@@ -19,4 +19,4 @@ I will post some details about the scripts on my personal blog- [http://www.zhzz
 
 * KNN dataset from [http://www.schonlau.net](http://www.schonlau.net)
 
-Thanks for the providers and authors sharing the precious data and articles/papers mentioned below.
+Thanks for the providers and authors sharing the precious data and articles/papers mentioned above.

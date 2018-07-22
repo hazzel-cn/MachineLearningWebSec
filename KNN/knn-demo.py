@@ -1,5 +1,9 @@
+import os
 import numpy
 from sklearn.neighbors import KNeighborsClassifier
+
+
+PWD = os.path.dirname(os.path.realpath(__file__))
 
 
 class KNNCommandClassifier(object):
@@ -12,7 +16,7 @@ class KNNCommandClassifier(object):
         Read commands in the spacified file. Divide them into 150 groups
         by every 100 commands.
         """
-        with open('masquerade-data/User%s' % str(user_index), 'r') as fp:
+        with open('%s/masquerade-data/User%s' % (PWD, str(user_index)), 'r') as fp:
             _line_count = 1
             commands_list = list()
             _tmp_100_list = list()
@@ -32,7 +36,7 @@ class KNNCommandClassifier(object):
         """
         final_set = set()
         for i in range(1, 51):
-            with open('masquerade-data/User%s' % str(i), 'r') as fp:
+            with open(PWD + 'masquerade-data/User%s' % str(i), 'r') as fp:
                 commands_list = list()
                 for line in fp.readlines():
                     commands_list.append(line.strip('\n'))
@@ -62,7 +66,7 @@ class KNNCommandClassifier(object):
         """ Get labels.
         """
         label_list = list()
-        with open('masquerade_summary.txt', 'r') as fp:
+        with open(PWD + 'masquerade_summary.txt', 'r') as fp:
             for line in fp.readlines():
                 line = line.strip('\n')
                 label_list.append(line.split()[file_id])

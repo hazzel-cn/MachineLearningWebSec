@@ -100,7 +100,7 @@ class KNNCommandClassifier(object):
 def main():
     knn = KNNCommandClassifier()
     knn.train(6)
-    print(knn.predict())
+    print(knn.score(9))
 
 
 if __name__ == '__main__':

@@ -36,7 +36,7 @@ class KNNCommandClassifier(object):
         """
         final_set = set()
         for i in range(1, 51):
-            with open(PWD + 'masquerade-data/User%s' % str(i), 'r') as fp:
+            with open('%smasquerade-data/User%s' % (PWD, str(i)), 'r') as fp:
                 commands_list = list()
                 for line in fp.readlines():
                     commands_list.append(line.strip('\n'))
@@ -66,7 +66,7 @@ class KNNCommandClassifier(object):
         """ Get labels.
         """
         label_list = list()
-        with open(PWD + 'masquerade_summary.txt', 'r') as fp:
+        with open('%s/masquerade_summary.txt' % PWD, 'r') as fp:
             for line in fp.readlines():
                 line = line.strip('\n')
                 label_list.append(line.split()[file_id])
